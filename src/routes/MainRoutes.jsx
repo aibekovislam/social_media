@@ -1,15 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import Registration from "../pages/Registration";
+import ArticleList from "../pages/ArticleList";
 
 function MainRoutes() {
-  return <Routes>
-    <Route>
-        <Route path="/home" element={<HomePage/>}/>
-        <Route path='/registration' element={<Registration/>}></Route>
-    </Route>
-  </Routes>
+  return (
+    <Routes>
+      <Route>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/article" element={<ArticleList />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default MainRoutes;
