@@ -1,13 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import SignPage from "../pages/SignPage";
+import ArticleList from "../pages/ArticleList";
+import MainLayote from "../layots/MainLayote";
+import Registration from "../pages/Registration";
 
 function MainRoutes() {
   return <Routes>
-    <Route>
+    <Route element={<MainLayote/>}>
         <Route path="/home" element={<HomePage/>}/>
-        <Route path="/home" element={<SignPage/>}/>
+        <Route path="/article" element={<ArticleList />} />
+        <Route path="/registration" element={<Registration/>}></Route>
     </Route>
   </Routes>
 }
