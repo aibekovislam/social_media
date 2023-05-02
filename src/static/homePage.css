@@ -52,6 +52,7 @@ body {
 .burger-icon {
   height: 40px !important;
   margin: 0 5px;
+  padding: 3px;
 }
 
 .burger-icon:hover {
@@ -67,6 +68,7 @@ body {
   margin-left: 10px;
   margin-right: 5px;
   justify-content: space-between;
+  /* overflow-x: scroll; */
 }
 .groups__span {
   appearance: none;

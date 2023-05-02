@@ -8,9 +8,9 @@ function AnswerMessage() {
       <div className="msg" style={{ marginLeft: "5px",margin: "10px 0 0 auto" }} class="card-text">
         <div class="text-message">
           <p className="user-name">Bayaman</p>
-          <p class="message">я люблю тебя  </p>
+          <p class="message">а я тебя нет </p>
           <div>
-            <span class="time">12:45</span>
+            <span class="time">12:46</span>
           </div>
         </div>
       </div>
