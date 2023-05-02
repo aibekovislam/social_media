@@ -2,12 +2,13 @@ import { Container } from "@mui/material";
 import React from "react";
 import "../message/message.css";
 import TextMessage from "../panel/TextMessage";
+import AnswerMessage from "../panel/AnswerMessage";
 
 // import { Search } from "@mui/icons-material";
 
 function Message() {
   return (
-    <div style={{display:'flex',flexDirection:'column'}}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="navbar-message">
         <nav style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ display: "flex", gap: "10px", margin: "10px" }}>
@@ -49,7 +50,12 @@ function Message() {
             </nav>
           </div> */}
           <div className="dialog">
-            <div><TextMessage/></div>
+            <div>
+              <TextMessage />
+            </div>
+            <div>
+              <AnswerMessage />
+            </div>
           </div>
           <div className="bottom-group">
             <input
