@@ -1,0 +1,18 @@
+import React from 'react'
+import "../info/rightinfo.css";
+import News from './News';
+
+function RightInfo() {
+  return (
+    <div className="right-block-main">
+      <h5 style={{ padding: "10px 5px" }}>Добавьте в свою ленту</h5>
+      {/* <Chat  /> */}
+      <News />
+      <News />
+      <News />
+      <p className="btn-news">смотреть рекомендации</p>
+    </div>
+  );
+}
+
+export default RightInfo

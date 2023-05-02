@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+}
+.right-block-main {
+  border: 1px solid #bebebc;
+  background-color: #fff;
+  max-width: 400px;
+  /* padding: 5px; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.btn-news {
+  padding: 10px;
+  /* border-radius: 10px; */
+  background-color: #fff;
+  border-top: 1px solid #bebebc;
+  /* margin-bottom: 6px; */
+}
+.btn-news:hover{
+    background-color: #ebebeb;
+  cursor: pointer;
+}

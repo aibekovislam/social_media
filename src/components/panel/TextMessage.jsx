@@ -4,7 +4,7 @@ import "../panel/chat.css";
 
 function TextMessage() {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex",marginTop:'5px' }}>
       <div class="img"></div>
       <div className="msg" style={{ marginLeft: "5px" }} class="card-text">
         <div class="text-message">
