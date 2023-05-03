@@ -3,6 +3,22 @@ import { BASE_URL } from "./consts";
 
 const $axios = axios.create();
 
+$axios.interceptors.request.use(
+	async (config) => {
+		const tokens = JSON.parse(localStorage.getItem("tokens"));
+		if (tokens) {
+			config.headers = {
+				...config.headers,
+				Authorization: `Bearer ${tokens.access}`,
+			};
+		}
+		return config;
+	},
+	(error) => {
+		return Promise.reject(error);
+	}
+);
+
 $axios.interceptors.response.use(
 	(response) => {
 		return response;
@@ -27,7 +43,7 @@ async function refreshAccessToken() {
 			return;
 		}
 
-		const { data } = await axios.post(`${BASE_URL}/auth/jwt/refresh/`, {
+		const { data } = await axios.post(`http://13.51.255.44/auth/jwt/refresh/`, {
 			refresh: tokens.refresh,
 		});
 		localStorage.setItem({
@@ -41,4 +57,4 @@ async function refreshAccessToken() {
 	}
 }
 
-export default $axios
+export default $axios;
