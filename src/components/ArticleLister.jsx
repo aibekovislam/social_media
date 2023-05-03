@@ -14,7 +14,7 @@ function ArticleLister() {
     <div className='posts'>
         { articles.map((item) => (
             <div className='postsChildren'>
-              
+                <h1>{item.title}</h1>
             </div>
         )) }        
     </div>
