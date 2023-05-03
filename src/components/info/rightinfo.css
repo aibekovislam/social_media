@@ -21,3 +21,13 @@
     background-color: #ebebeb;
   cursor: pointer;
 }
+.advertisement{
+  margin-top: 20px;
+  border: 1px solid #bebebc;
+  background-color: #fff;
+  max-width: 400px;
+  /* padding: 5px; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
