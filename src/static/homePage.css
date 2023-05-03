@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+}
+.main-block {
+  display: flex;
+}
+
+.left-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* border: 2px solid #000; */
+  /* padding: 10px; */
+}
+
+.right-block {
+  display: flex;
+  flex: 4;
+}
+
+.navbar {
+  display: flex;
+  /* border-bottom: 2px solid #000; */
+  padding: 10px 5px;
+}
+
+.input-navbar {
+  width: 100%;
+  max-width: 180px;
+  /* height: 35px; */
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.input-navbar:focus {
+  border: 2px solid grey;
+}
+
+.input-navbar:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input-navbar:active {
+  transform: scale(0.95);
+}
+
+.burger-icon {
+  height: 40px !important;
+  margin: 0 5px;
+  padding: 3px;
+}
+
+.burger-icon:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  background-color: #f8f5f5;
+  border-radius: 10px;
+}
+
+.groups {
+  display: flex;
+  /* gap: 30px; */
+  margin-left: 10px;
+  margin-right: 5px;
+  justify-content: space-between;
+  /* overflow-x: scroll; */
+}
+.groups__span {
+  appearance: none;
+  background-color: #fafbfc;
+  /* border: 1px solid rgba(27, 31, 35, 0.15); */
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.groups__span:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.groups__span:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.groups__span:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.groups__span:focus {
+  outline: 1px transparent;
+}
+
+.groups__span:before {
+  display: none;
+}
+
+.groups__span:-webkit-details-marker {
+  display: none;
+}
+
+.top {
+  border-bottom: 2px solid #c2c1c1;
+}
+.right-block {
+  /* border-left: 1px solid #000; */
+  background-image: url(https://sun9-59.userapi.com/impg/Y2kVnJEVrXvMYn9ymjdO3Gu1k1mjcZQj0hzXag/UjCa5uaBBNs.jpg?size=1429x882&quality=96&sign=24ea3c1658be77d051f0cf75ebfe32d9&type=album);
+  background-repeat: round;
+}
+.main-block {
+  /* border: 2px solid #000; */
+  height: 650px;
+  border-radius: 10px;
+}
+.chats {
+  /* overflow: auto; */
+  overflow-x: hidden;
+  scrollbar-color: #128c12 #d28241; 
+  scrollbar-width: auto;
+}
+/* .chats::-webkit-scrollbar {
+  width: 0;
+} */
+.chats::-webkit-scrollbar {
+    width: 6px; /* ширина для вертикального скролла */
+    background-color: #d5d6d7;
+}
+
+/* ползунок скроллбара */
+.chats::-webkit-scrollbar-thumb {
+    background-color: #302d2e;
+    border-radius: 7em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+.chats::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
+}
+html,body {
+  overflow: hidden;
+
+}

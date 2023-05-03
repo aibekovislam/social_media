@@ -1,0 +1,136 @@
+.main-message{
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+}
+.dialog{
+    height: 500px;
+}
+.bottom-group{
+    display: flex;
+}
+.input-massage {
+  width: 600px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+
+.input-massage:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+.input-massage:hover {
+  outline: 1px solid lightgrey;
+}
+
+.button-message {
+ margin: 0 5px;
+ appearance: none;
+ background-color: #FAFBFC;
+ border: 1px solid rgba(27, 31, 35, 0.15);
+ border-radius: 50px;
+ box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+ box-sizing: border-box;
+ color: #24292E;
+ cursor: pointer;
+ display: inline-block;
+ font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+ font-size: 14px;
+ font-weight: 500;
+ line-height: 20px;
+ list-style: none;
+ padding: 10px 16px;
+ position: relative;
+ transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ vertical-align: middle;
+ white-space: nowrap;
+ word-wrap: break-word;
+}
+
+.button-message:hover {
+ background-color: #F3F4F6;
+ text-decoration: none;
+ transition-duration: 0.1s;
+}
+
+.button-message:disabled {
+ background-color: #FAFBFC;
+ border-color: rgba(27, 31, 35, 0.15);
+ color: #959DA5;
+ cursor: default;
+}
+
+.button-message:active {
+ background-color: #EDEFF2;
+ box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+ transition: none 0s;
+}
+
+.button-message:focus {
+ outline: 1px transparent;
+}
+
+.button-message:before {
+ display: none;
+}
+
+.button-message:-webkit-details-marker {
+ display: none;
+}
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 10em;
+  transition: all ease-in-out .5s;
+}
+
+.search__input:hover, .search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #ccc;
+}
+
+.navbar-message{
+    background-color: #fff;
+    /* border-radius: 30px; */
+    align-items: center;
+    border-left: 1px solid #242424;
+}
+.phone-icon:hover{
+  background-color: #f5f1f1;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.dots:hover{
+  background-color: #f5f1f1;
+  cursor: pointer;
+  border-radius: 7px;
+}
