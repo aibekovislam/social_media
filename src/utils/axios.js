@@ -1,7 +1,9 @@
 import axios from "axios";
 import { BASE_URL } from "./consts";
+import { useState } from "react";
 
-const $axios = axios.create();
+export const $axios = axios.create();
+
 
 $axios.interceptors.response.use(
 	(response) => {
