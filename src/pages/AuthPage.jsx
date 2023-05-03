@@ -3,8 +3,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -35,14 +33,17 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const Registration = () => {
+const AuthPage = () => {
 	const [isLogin, setIsLogin] = React.useState(true);
-	const { register, logIn, user, getProducts, userList } = useAuthContext();
+	const { register, logIn, user } = useAuthContext();
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
-	
-		register(data)
+		if (isLogin) {
+			logIn(data);
+		} else {
+			register(data);
+		}
 	};
 
 	if(user) {
@@ -142,4 +143,4 @@ const Registration = () => {
 	);
 };
 
-export default Registration;
+export default AuthPage;

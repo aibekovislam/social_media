@@ -1,0 +1,88 @@
+.containerAdd{
+    background-color: white;
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #bebebc;
+}
+
+.formAdd{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 13px;
+}
+
+.inputAdd{
+    width: 470px;
+    height: 50px;
+    border: 1px solid #bebebc;
+    border-radius: 25px;
+    padding-left: 13px;
+}
+
+.inputAdd:focus{
+    outline-color: #0a66c2;
+}
+
+.textareaAdd{
+    width: 470px;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 13px;
+    padding-top: 13px;
+}
+
+.textareaAdd:focus{
+    outline-color: #0a66c2;
+}
+
+.fileAdd::-webkit-file-upload-button{
+    visibility: hidden;
+    border-radius: 25px;
+}
+
+.fileAdd::before{
+  content: 'Select files';
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 470px;
+  height: 50px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: auto;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+  text-align: center;
+}
+
+
+.buttonAdd{
+    background-color: #0a66c2;
+    color: white;
+    width: 470px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    transition-duration: 0.3s;
+}
+
+.buttonAdd:hover{
+    background-color: #055aaf;
+}
+
+.addPostTitle{
+    /* font-size: 29px; */
+    padding: 10px 45px 10px;
+    margin-top: 10px;
+
+}
