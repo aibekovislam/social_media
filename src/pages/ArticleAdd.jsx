@@ -4,7 +4,7 @@ import { useArticleContext } from "../context/ArticleContext";
 import '../static/add.css';
 
 function ArticleAdd() {
-//   const [category, setCategory] = useState("юрты");
+  const [category, setCategory] = useState("юрты");
   const [images, setImages] = useState(null)
   const [formValue, setFormValue] = useState({
     title: "",

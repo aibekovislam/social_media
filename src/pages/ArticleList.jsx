@@ -4,7 +4,7 @@ import LeftInfo from '../components/LeftInfo';
 import Sidebar from '../components/Sidebar';
 import { useArticleContext } from '../context/ArticleContext'
 import MainInfo from '../components/MainInfo'
-import RightInfo from '../components/RighInfo';
+import RightInfo from '../components/RightInfo';
 
 import '../static/article.css'
 

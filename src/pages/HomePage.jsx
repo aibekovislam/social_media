@@ -2,7 +2,7 @@ import React from "react";
 import "../static/homePage.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Chat from "../components/panel/Chat";
-// import message from "../components/message/Message";
+import message from "../components/message/Message";
 import Message from "../components/message/Message";
 
 
