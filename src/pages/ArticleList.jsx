@@ -7,30 +7,26 @@ import MainInfo from '../components/MainInfo'
 import RightInfo from '../components/RightInfo';
 
 import '../static/article.css'
+import { useAuthContext } from '../context/AuthContext';
 
 function ArticleList() {
 
   const { getArticles, articles } = useArticleContext();
-
-
-  useEffect(() => {
-    getArticles();
-  }, [])
+  // useEffect(() => {
+  //   getArticles();
+  // }, [])
 
   return (
-    <div>
-      {/* { articles.map((item) => (
-        <h1>{item.title}</h1>
-      )) } */}
-      <Sidebar/>
-        <div className='containerIslam' style={{ marginTop: '30px' }}>
-          <div style={{ display: 'flex', gap: '30px' }}>
-            <LeftInfo/>
-            <MainInfo/>
-            <RightInfo/>
+        <div>
+        <Sidebar/>
+          <div className='containerIslam' style={{ marginTop: '30px' }}>
+            <div style={{ display: 'flex', gap: '30px' }}>
+              <LeftInfo/>
+              <MainInfo/>
+              <RightInfo/>
+            </div>
           </div>
         </div>
-    </div>
   )
 }
 

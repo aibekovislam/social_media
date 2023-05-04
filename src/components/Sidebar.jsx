@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 import '../static/navbar.css'
 import { BASE_URL } from '../utils/consts';
 
 function Sidebar() {
-  const { user } = useAuthContext();
+  const { user, logOut } = useAuthContext();
   const [ dropdownState, setDropdownState ] = useState(false);
+//   const navigate = Navigate();
   return (
     <div className="header">
         <div className='containerForNavbar'>
@@ -85,7 +87,9 @@ function Sidebar() {
                                         <div className="title" style={{color:"black"}}>Manage</div>
                                         <div className="list">Post & Activity</div>
                                         <div className="list bdr_bottom">Job Postion Account</div>
-                                        <div className="list">sign out</div>
+                                        <div className="list" onClick={() => {
+                                            logOut()
+                                        }}><Link style={{ color: 'red' }} to={'/auth'}>Sign out</Link></div>
                                     </div>
                                 </div>
                         </div>
