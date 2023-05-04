@@ -1,0 +1,43 @@
+.postsChildren{
+    background-color: white;
+    border: 1px solid #bebebc;
+    border-radius: 10px;
+    max-width: 555px;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+*{
+    margin: 0;
+}
+
+.change{
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+.linkButton{
+    color: white;
+}
+
+.linkButton:hover{
+    color: white;
+}
+
+.trash{
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+.d-f{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentMainBlock{
+    
+}

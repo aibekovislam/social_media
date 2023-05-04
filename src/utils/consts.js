@@ -2,10 +2,15 @@ export const BASE_URL = 'http://13.51.255.44';
 
 export const ACTIONS = {
     user: 'user',
+	users: 'users',
 
 	articles: 'articles',
 	categories: 'categories',
-	oneProduct: 'oneProduct',
+	oneArticle: 'oneArticle',
 
-	pageTotalCount: "pageTotalCount"
+	pageTotalCount: "pageTotalCount",
+
+	universities: "universities",
+	oneUniversity: "oneUniversity",
+	pageTotalUniversityCount: "pageTotalUniversityCount"
 }

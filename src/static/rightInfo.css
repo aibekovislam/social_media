@@ -5,6 +5,8 @@
     /* border: 1px solid #bebebc; */
     background-color: #fff;
     max-width: 500px;
+    height: 500px;
+    position: sticky;
     /* padding: 5px; */
     border-radius: 10px;
     display: flex;

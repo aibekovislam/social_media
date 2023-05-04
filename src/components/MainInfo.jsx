@@ -1,8 +1,8 @@
 import React from "react";
 import ArticleAdd from "../pages/ArticleAdd";
-import ArticleList from "../pages/ArticleList";
 import "../static/mainInfo.css";
 import ArticleLister from "./ArticleLister";
+
 
 function MainInfo() {
   return (
@@ -12,7 +12,7 @@ function MainInfo() {
       </div>
       <div className="main-block-main">
         <div style={{ padding: "20px" }}>
-          <h3 style={{padding:'0 0  20px 0',color:"#4b4b4b"}}>Создайте свой профиль в LinkedIn</h3>
+          <h3 style={{padding:'0 0  20px 0',color:"#4b4b4b"}}>Создайте свой профиль в Edgen</h3>
           <div className="main-block-second">
             <img
               style={{ width: "100%", borderRadius: "10px 10px 0 0",padding:'0 0 10px 0' }}

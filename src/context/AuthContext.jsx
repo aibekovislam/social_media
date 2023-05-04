@@ -10,22 +10,21 @@ export function useAuthContext() {
 	return useContext(authContext);
 }
 
-// const initialState = {
-// 	user: null,
-// };
+const initialState = {
+	users: [],
+};
 
-// function reducer(state, action) {
-// 	switch (action.type) {
-// 		case ACTIONS.user:
-// 			return { ...state, user: action.payload };
-
-// 		default:
-// 			return state;
-// 	}
-// }
+function reducer(state, action) {
+	switch (action.type) {
+		case ACTIONS.users:
+			return { ...state, users: action.payload };
+		default:
+			return state;
+	}
+}
 
 function AuthContext({ children }) {
-	// const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, dispatch] = useReducer(reducer, initialState);
 	const [ user, setUser ] = useState(null)
 
 	async function register(credentials) {
@@ -34,6 +33,19 @@ function AuthContext({ children }) {
 			console.log(res)
 		} catch (error) {
 			console.log(error.response.data, 'regiser error');
+		}
+	}
+
+	async function getAllUsers() {
+		try {
+			const { data } = await axios.get(`${BASE_URL}/`)
+			dispatch({
+				type: ACTIONS.users,
+				payload: data
+			})
+			console.log(data)
+		} catch (error) {
+			console.log(error)
 		}
 	}
 
@@ -120,7 +132,8 @@ function AuthContext({ children }) {
 		logIn,
 		checkAuth,
 		getProducts,
-		userList	
+		userList,
+		logOut	
 	};
 
 	return <authContext.Provider value={value}>{children}</authContext.Provider>;

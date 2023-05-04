@@ -3,47 +3,48 @@ import { ACTIONS, BASE_URL } from "../utils/consts";
 import $axios from "../utils/axios";
 import axios from "axios";
 
-export const articleContext = createContext();
+export const universityContext = createContext();
 
-export function useArticleContext() {
-  return useContext(articleContext);
+export function useUniversityContext() {
+  return useContext(universityContext);
 }
 const initState = {
-  articles: [],
-  oneArticle: null,
+  universities: [],
+  oneUniversity: null,
   categories: [], 
-  pageTotalCount: 1
+  pageTotalUniversityCount: 1
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case "articles":
-      return { ...state, articles: action.payload };
+    case ACTIONS.universities:
+      return { ...state, universities: action.payload };
     // case ACTIONS.categories:
     //   return { ...state, categories: action.payload };
-    case ACTIONS.oneArticle:
-      return { ...state, oneArticle: action.payload };
-    case ACTIONS.pageTotalCount:
-      return { ...state, pageTotalCount: action.payload };
+    case ACTIONS.oneUniversity:
+      return { ...state, oneUniversity: action.payload };
+    case ACTIONS.pageTotalUniversityCount:
+      return { ...state, pageTotalUniversityCount: action.payload };
     default:
       return state;
   }
 }
-function ArticleContext({ children }) {
+function UniversityContext({ children }) {
   const [state, dispatch] = useReducer(reducer, initState);
 
-  async function getArticles(page) {
+  async function getUniversities() {
     try {
-        const { data } = await axios.get(`http://13.51.255.44/article/?offset=${page}`);
-        console.log(data)
+        const { data } = await axios.get(`http://13.51.255.44/university/`);
+        // console.log(data)
         dispatch({
           type: ACTIONS.pageTotalCount,
           payload: Math.ceil(data.count / 3),
         });
         dispatch({
-            type: ACTIONS.articles,
+            type: ACTIONS.universities,
             payload: data.results
         })
+        // console.log(universities)
     } catch (error) {
         console.log(error)
     }
@@ -62,7 +63,7 @@ function ArticleContext({ children }) {
                     'Authorization': `Token ${tokens.access}`,
                 },
             });
-            getArticles()
+            // getArticles()
             return response.data;
         } catch (error) {
             console.error(error);
@@ -76,18 +77,15 @@ function ArticleContext({ children }) {
             const formData = new FormData();
             formData.append('title', data.title);
             formData.append('description', data.description);
-            if(image) {
-              formData.append('image', image);
-            }
+            formData.append('image', image);
             const tokens = JSON.parse(localStorage.getItem("tokens"));
-            console.log(...formData)
-            const response = await axios.patch(`${url}/article/${slug}/`, formData, {
+            const response = await axios.patch(`${url}/article/${slug}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Token ${tokens.access}`,
                 },
             });
-            getArticles();
+            // getArticles();
             return response.data
       } catch (error) {
         console.log(error)
@@ -97,28 +95,17 @@ function ArticleContext({ children }) {
   async function deleteArticle(slug) {
     try {
         const tokens = JSON.parse(localStorage.getItem("tokens"));
-        await axios.delete(`${BASE_URL}/article/${slug}/`, {
+        await axios.delete(`http://13.51.255.44/article/${slug}/`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Token ${tokens.access}`,
           }
         });
-        getArticles();
+        // getArticles();
     } catch (error) {
         console.log(error)
     }
-  }
-
-  async function addComment(data, slug) {
-    const tokens = JSON.parse(localStorage.getItem("tokens"))
-    await axios.post(`${BASE_URL}/article/${slug}/comment`, data, {
-      headers: {
-        'Content-Type': 'Application/json',
-        'Authorization': `Token ${tokens.access}`
-      }
-    })
-    getArticles();
   }
 
   async function getOneArticle( slug ) {
@@ -147,25 +134,24 @@ function ArticleContext({ children }) {
   }
 
   const value = {
-    articles: state.articles,
-    oneArticle: state.oneArticle,
+    universities: state.universities,
+    oneUniversity: state.oneUniversity,
     // categories: state.categories,
-    getArticles,
+    getUniversities,
     getCategories,
     deleteArticle,
     getOneArticle,
     editArticle,
     sendPostRequest,
-    pageTotalCount: state.pageTotalCount,
-    addComment
+    pageTotalUniversityCount: state.pageTotalUniversityCount
   }
 
   return (
-    <articleContext.Provider value={value}>{children}</articleContext.Provider>
+    <universityContext.Provider value={value}>{children}</universityContext.Provider>
   );
 }
 
-export default ArticleContext;
+export default UniversityContext;
 
 
 

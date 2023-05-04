@@ -47,7 +47,7 @@ const AuthPage = () => {
 	};
 
 	if(user) {
-		return <Navigate replace to='/'></Navigate>
+		return <Navigate replace to='/article/'></Navigate>
 	}
 
 	return (

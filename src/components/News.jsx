@@ -1,19 +1,40 @@
-import React from 'react'
+import { Pagination } from '@mui/material';
+import React, { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
+import { useUniversityContext } from '../context/UniversityContext';
 import "../static/news.css"
+import { BASE_URL } from '../utils/consts';
 
 function News() {
+  const { getUniversities, universities, pageTotalUniversityCount } = useUniversityContext();
+  const [ searchParams, setSearchParams ] = useSearchParams();
+  const [page, setPage] = useState(+searchParams.get("page") || 1);
+
+  useEffect(() => {
+    getUniversities();
+  }, [searchParams])
+
   return (
     <div>
       <div className="card-right">
-        <img style={{borderRadius:'50px',width:"50px",margin:"5px", height: '50px', objectFit: 'cover'}}
-          src="https://media.licdn.com/dms/image/C4D0BAQEBr5YXaxN8cA/company-logo_100_100/0/1660505899064?e=1691020800&v=beta&t=iI-CB5_xTwe5B2eCjhxSdbJ55RTRrcP4tORG3cB3pI4"
-          alt=""
-        />
-        <div className="card-text-right">
-          <h5>bayaman</h5>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <button className='button-right'>Отслеживать</button>
-        </div>
+        { universities.map((item) => (
+          <>
+            <img style={{borderRadius:'50px',width:"50px",margin:"5px", height: '50px', objectFit: 'cover'}}
+            src={`${BASE_URL}/${item?.avatar}`}
+            alt=""
+          />
+          <div className="card-text-right">
+            <h5>{ item.name }</h5>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <button className='button-right'>Отслеживать</button>
+            <Pagination
+				    page={page}
+				    onChange={(e, value) => setPage(value)}
+				    count={pageTotalUniversityCount}
+			      />  
+          </div>
+          </>
+        )) }
       </div>
     </div>
   );
